@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./ravicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./ravicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./ravicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./ravicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./ravicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./ravicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./ravicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./ravicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./ravicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./ravicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./ravicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./ravicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./ravicon/favicon-16x16.png">
+<link rel="manifest" href="./ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="./ravicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <title>EDUCHEM</title>
+    <link rel="stylesheet" href="menu.css" />
+    <link rel="stylesheet" href="welcome.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      /* Nhỏ: thêm pointer khi hover card */
+      .card {
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      /* Overlay full màn hình */
+      .welcome-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+      }
+      .welcome-box {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 500px;
+        text-align: center;
+      }
+      #startBtn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #0d47a1;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      #startBtn:hover {
+        background-color: #1565c0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Overlay chào mừng -->
+    <div class="welcome-overlay" id="welcome">
+      <div class="welcome-box">
+        <h2>Chào mừng bạn đến với EDUCHEM 🎉</h2>
+        <p>
+          Đây là nền tảng học Hóa thông minh, dễ hiểu và hiệu quả, được thiết kế
+          dành riêng cho học sinh.
+          <br /><br />
+          👉 Tại đây, bạn sẽ tìm thấy: 
+          <ul style="text-align: left;">
+            <li>Bài học cơ bản và nâng cao</li>
+            <li>Ví dụ minh họa trực quan</li>
+            <li>Cộng đồng thảo luận và chia sẻ</li>
+          </ul>
+        </p>
+        <button id="startBtn">Bắt đầu học</button>
+      </div>
+    </div>
+
+    <header>
+      <div class="header-container">
+        <h1>EDUCHEM</h1>
+        <p>Học Hóa dễ dàng, hiệu quả</p>
+      </div>
+    </header>
+
+    <main class="main-content">
+<section class="card" data-link="/thcs/thcs.html">
+  <div class="icon-bg"><i class="fas fa-flask"></i></div>
+  <h3>THCS</h3>
+</section>
+
+<section class="card" data-link="/thpt/thpt.html">
+  <div class="icon-bg"><i class="fas fa-vial"></i></div>
+  <h3>THPT</h3>
+</section>
+
+<section class="card" data-link="/dien_dan/dien_dan.html">
+  <div class="icon-bg"><i class="fas fa-comments"></i></div>
+  <h3>Diễn đàn hóa học</h3>
+</section>
+
+<section class="card" data-link="/chemverse/chemverse.html">
+  <div class="icon-bg"><i class="fas fa-globe"></i></div>
+  <h3>ChemVerse - Vũ trụ hóa học</h3>
+</section>
+
+    </main>
+
+    <footer>
+      <div class="social-links">
+        <a href="https://m.me/100075597477910" target="_blank" title="Facebook">
+          <i class="fab fa-facebook-messenger"></i> Facebook
+        </a>
+        <a
+          href="mailto:educhem.vn.1112@gmail.com"
+          target="_blank"
+          title="Gmail"
+        >
+          <i class="fas fa-envelope"></i> Gmail
+        </a>
+        <a href="tel:0342266204" title="Gọi ngay">
+          <i class="fas fa-phone"></i> 0342266204
+        </a>
+      </div>
+      <p>&copy; Nền tảng Hóa học thông minh | Dành cho học sinh</p>
+    </footer>
+
+    <script>
+      // Bắt sự kiện click card
+      document.querySelectorAll("[data-link]").forEach((el) => {
+        el.addEventListener("click", () => {
+          window.location.href = el.getAttribute("data-link");
+        });
+      });
+
+      // Bắt sự kiện click button bắt đầu
+      document.getElementById("startBtn").addEventListener("click", () => {
+        document.getElementById("welcome").style.display = "none";
+      });
+    </script>
+
+    <script src="menu.js"></script>
+    <script src="welcome.js"></script>
+  </body>
+</html>

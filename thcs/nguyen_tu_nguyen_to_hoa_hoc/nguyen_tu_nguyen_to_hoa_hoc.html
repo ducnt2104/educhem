@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bảng tuần hoàn hóa học</title>
+    <link rel="stylesheet" href="nguyen_tu_nguyen_to_hoa_hoc.css" />
+  </head>
+  <body>
+    <h1>Bảng tuần hoàn hóa học</h1>
+
+    <!-- Nút menu -->
+    <div class="menu-buttons">
+      <a href="../thcs.html">Quay lại menu</a>
+      <a href="ly_thuyet_nguyen_tu_nguyen_to_hoa_hoc.html">Lý thuyết</a>
+    </div>
+
+    <!-- Bảng tuần hoàn -->
+    <div class="container">
+      <div id="periodic-table">
+        <!-- JS sẽ sinh bảng -->
+      </div>
+      <div id="atom-info">
+        <h2>Nguyên tử</h2>
+        <div id="atom-visual"></div>
+        <div id="element-details">
+          <p>
+            <strong>Tên nguyên tố:</strong>
+            <span id="element-name">Chọn nguyên tố</span>
+          </p>
+          <p><strong>Ký hiệu:</strong> <span id="element-symbol">N/A</span></p>
+          <p>
+            <strong>Số hiệu nguyên tử:</strong>
+            <span id="element-number">N/A</span>
+          </p>
+          <p>
+            <strong>Khối lượng nguyên tử:</strong>
+            <span id="element-mass">N/A</span>
+          </p>
+          <p>
+            <strong>Số proton:</strong> <span id="element-protons">N/A</span>
+          </p>
+          <p>
+            <strong>Số neutron:</strong> <span id="element-neutrons">N/A</span>
+          </p>
+          <p>
+            <strong>Số electron:</strong>
+            <span id="element-electrons">N/A</span>
+          </p>
+          <p>
+            <strong>Ứng dụng:</strong> <span id="element-application">N/A</span>
+          </p>
+          <p><strong>Nhóm:</strong> <span id="element-group">N/A</span></p>
+          <p><strong>Chu kì:</strong> <span id="element-period">N/A</span></p>
+          <p>
+            <strong>Cấu hình điện tử:</strong>
+            <span id="element-electronConfig">N/A</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div id="legend">
+      <div
+        class="legend-item"
+        onclick="filterGroup(1)"
+        onmouseover="showInfo('Nhóm 1 (Kim loại kiềm): Rất hoạt động, dễ tạo hợp chất kiềm.')"
+      >
+        <span class="color-box" style="background: #ff5722"></span>
+        <p>Nhóm 1 - Kim loại kiềm</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(2)"
+        onmouseover="showInfo('Nhóm 2 (Kim loại kiềm thổ): Hoạt động mạnh, kém hơn nhóm 1.')"
+      >
+        <span class="color-box" style="background: #ff9800"></span>
+        <p>Nhóm 2 - Kim loại kiềm thổ</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(3)"
+        onmouseover="showInfo('Nhóm 3: Bao gồm Sc, Y và các nguyên tố đất hiếm.')"
+      >
+        <span class="color-box" style="background: #9c27b0"></span>
+        <p>Nhóm 3</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(4)"
+        onmouseover="showInfo('Nhóm 4: Bao gồm Ti, Zr, Hf, thường dùng trong hợp kim.')"
+      >
+        <span class="color-box" style="background: #673ab7"></span>
+        <p>Nhóm 4</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(5)"
+        onmouseover="showInfo('Nhóm 5: Bao gồm V, Nb, Ta, kim loại chuyển tiếp.')"
+      >
+        <span class="color-box" style="background: #3f51b5"></span>
+        <p>Nhóm 5</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(6)"
+        onmouseover="showInfo('Nhóm 6: Bao gồm Cr, Mo, W, có nhiều ứng dụng công nghiệp.')"
+      >
+        <span class="color-box" style="background: #2196f3"></span>
+        <p>Nhóm 6</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(7)"
+        onmouseover="showInfo('Nhóm 7: Bao gồm Mn, Tc, Re.')"
+      >
+        <span class="color-box" style="background: #03a9f4"></span>
+        <p>Nhóm 7</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(8)"
+        onmouseover="showInfo('Nhóm 8: Fe, Ru, Os – quan trọng trong hợp kim và công nghiệp.')"
+      >
+        <span class="color-box" style="background: #00bcd4"></span>
+        <p>Nhóm 8</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(9)"
+        onmouseover="showInfo('Nhóm 9: Co, Rh, Ir.')"
+      >
+        <span class="color-box" style="background: #009688"></span>
+        <p>Nhóm 9</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(10)"
+        onmouseover="showInfo('Nhóm 10: Ni, Pd, Pt – kim loại quý.')"
+      >
+        <span class="color-box" style="background: #4caf50"></span>
+        <p>Nhóm 10</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(11)"
+        onmouseover="showInfo('Nhóm 11: Cu, Ag, Au – kim loại quý, dẫn điện tốt.')"
+      >
+        <span class="color-box" style="background: #8bc34a"></span>
+        <p>Nhóm 11</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(12)"
+        onmouseover="showInfo('Nhóm 12: Zn, Cd, Hg.')"
+      >
+        <span class="color-box" style="background: #cddc39"></span>
+        <p>Nhóm 12</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(13)"
+        onmouseover="showInfo('Nhóm 13: Bao gồm B, Al, Ga, In, Tl.')"
+      >
+        <span class="color-box" style="background: #ffeb3b"></span>
+        <p>Nhóm 13</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(14)"
+        onmouseover="showInfo('Nhóm 14: C, Si, Ge, Sn, Pb – đa dạng tính chất.')"
+      >
+        <span class="color-box" style="background: #ffc107"></span>
+        <p>Nhóm 14</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(15)"
+        onmouseover="showInfo('Nhóm 15: N, P, As, Sb, Bi – còn gọi là nhóm nitơ.')"
+      >
+        <span class="color-box" style="background: #ff9800"></span>
+        <p>Nhóm 15</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(16)"
+        onmouseover="showInfo('Nhóm 16: O, S, Se, Te, Po – còn gọi là nhóm oxi.')"
+      >
+        <span class="color-box" style="background: #ff5722"></span>
+        <p>Nhóm 16</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(17)"
+        onmouseover="showInfo('Nhóm 17 (Halogen): Rất hoạt động, dễ tạo muối.')"
+      >
+        <span class="color-box" style="background: #795548"></span>
+        <p>Nhóm 17 - Halogen</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup(18)"
+        onmouseover="showInfo('Nhóm 18 (Khí hiếm): Bền, hầu như không phản ứng.')"
+      >
+        <span class="color-box" style="background: #607d8b"></span>
+        <p>Nhóm 18 - Khí hiếm</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup('lan')"
+        onmouseover="showInfo('Dãy Lantanide: 57–71, đất hiếm.')"
+      >
+        <span class="color-box" style="background: #e91e63"></span>
+        <p>Lantanide</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="filterGroup('act')"
+        onmouseover="showInfo('Dãy Actinide: 89–103, phóng xạ.')"
+      >
+        <span class="color-box" style="background: #9e9e9e"></span>
+        <p>Actinide</p>
+      </div>
+
+      <div
+        class="legend-item"
+        onclick="showAll()"
+        onmouseover="showInfo('Hiện tất cả nguyên tố.')"
+      >
+        <span class="color-box rainbow"></span>
+        <p>Hiện tất cả</p>
+      </div>
+    </div>
+
+    <!-- Thông tin -->
+    <div id="info">
+      <h3>Thông tin nhóm:</h3>
+      <p id="group-info">Di chuột qua màu để xem thông tin nhóm.</p>
+    </div>
+
+    <script>
+      function showInfo(text) {
+        document.getElementById("group-info").innerText = text;
+      }
+
+      function filterGroup(groupNumber) {
+        const allElements = document.querySelectorAll(".element");
+        allElements.forEach((el) => {
+          el.style.display = el.classList.contains("group-" + groupNumber)
+            ? "flex"
+            : "none";
+        });
+      }
+
+      function showAll() {
+        const allElements = document.querySelectorAll(".element");
+        allElements.forEach((el) => (el.style.display = "flex"));
+      }
+    </script>
+
+    <script src="nguyen_tu_nguyen_to_hoa_hoc-bang-tuan-hoan.js"></script>
+    <script src="nguyen_tu_nguyen_to_hoa_hoc.js"></script>
+  </body>
+</html>
