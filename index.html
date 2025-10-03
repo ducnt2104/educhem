@@ -3,25 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="57x57" href="./ravicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="./ravicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="./ravicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="./ravicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="./ravicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="./ravicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="./ravicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="./ravicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="./ravicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="./ravicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./ravicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="./ravicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./ravicon/favicon-16x16.png">
-<link rel="manifest" href="./ico/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="./ravicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./ravicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./ravicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./ravicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./ravicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./ravicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./ravicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./ravicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./ravicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./ravicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./ravicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./ravicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./ravicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./ravicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./ico/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./ravicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
     <title>EDUCHEM</title>
-    <link rel="stylesheet" href="menu.css" />
     <link rel="stylesheet" href="welcome.css" />
     <link
       rel="stylesheet"
@@ -44,7 +102,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.6);
+        background: rgba(0, 0, 0, 0.6);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -76,19 +134,43 @@
     <!-- Overlay chào mừng -->
     <div class="welcome-overlay" id="welcome">
       <div class="welcome-box">
-        <h2>Chào mừng bạn đến với EDUCHEM 🎉</h2>
+        <h2>
+          🌟 Chào mừng bạn đến với <span style="color: #1565c0">EDUCHEM</span>
+        </h2>
         <p>
-          Đây là nền tảng học Hóa thông minh, dễ hiểu và hiệu quả, được thiết kế
-          dành riêng cho học sinh.
-          <br /><br />
-          👉 Tại đây, bạn sẽ tìm thấy: 
-          <ul style="text-align: left;">
-            <li>Bài học cơ bản và nâng cao</li>
-            <li>Ví dụ minh họa trực quan</li>
-            <li>Cộng đồng thảo luận và chia sẻ</li>
-          </ul>
+          Đây là nền tảng học tập trực tuyến
+          <b>thông minh – dễ hiểu – hiệu quả</b>, bắt đầu từ <b>Hóa học</b> và
+          sẽ sớm mở rộng sang <b>Vật lý</b> ⚡ và <b>Sinh học</b> 🧬.
         </p>
-        <button id="startBtn">Bắt đầu học</button>
+
+        <div style="text-align: left; margin: 15px 0">
+          <h3 style="margin-bottom: 8px; color: #1565c0">
+            🎯 Mục tiêu của chúng tôi:
+          </h3>
+          <ul style="list-style: none; padding: 0; line-height: 1.6">
+            <li>
+              📘 Cung cấp <b>bài học cơ bản & nâng cao</b> theo chương trình.
+            </li>
+            <li>🧪 Đưa ra <b>ví dụ minh họa trực quan</b>, dễ hình dung.</li>
+            <li>🤝 Xây dựng <b>cộng đồng học tập</b> để cùng nhau tiến bộ.</li>
+            <li>
+              🚀 Giúp bạn <b>tự tin chinh phục kỳ thi</b> và ứng dụng thực tế.
+            </li>
+          </ul>
+        </div>
+
+        <div style="text-align: left; margin: 15px 0">
+          <h3 style="margin-bottom: 8px; color: #1565c0">
+            📖 Hướng dẫn nhanh:
+          </h3>
+          <ol style="padding-left: 18px; line-height: 1.6">
+            <li>Chọn <b>môn học</b> bạn muốn bắt đầu.</li>
+            <li>Xem <b>bài học</b> và luyện tập qua ví dụ.</li>
+            <li>Trao đổi trong <b>cộng đồng</b> để giải đáp thắc mắc.</li>
+          </ol>
+        </div>
+
+        <button id="startBtn">🚀 Bắt đầu hành trình học tập</button>
       </div>
     </div>
 
@@ -100,26 +182,25 @@
     </header>
 
     <main class="main-content">
-<section class="card" data-link="/thcs/thcs.html">
-  <div class="icon-bg"><i class="fas fa-flask"></i></div>
-  <h3>THCS</h3>
-</section>
+      <section class="card" data-link="/thcs/thcs.html">
+        <div class="icon-bg"><i class="fas fa-flask"></i></div>
+        <h3>THCS</h3>
+      </section>
 
-<section class="card" data-link="/thpt/thpt.html">
-  <div class="icon-bg"><i class="fas fa-vial"></i></div>
-  <h3>THPT</h3>
-</section>
+      <section class="card" data-link="/thpt/thpt.html">
+        <div class="icon-bg"><i class="fas fa-vial"></i></div>
+        <h3>THPT</h3>
+      </section>
 
-<section class="card" data-link="/dien_dan/dien_dan.html">
-  <div class="icon-bg"><i class="fas fa-comments"></i></div>
-  <h3>Diễn đàn hóa học</h3>
-</section>
+      <section class="card" data-link="/dien_dan/dien_dan.html">
+        <div class="icon-bg"><i class="fas fa-comments"></i></div>
+        <h3>Diễn đàn hóa học</h3>
+      </section>
 
-<section class="card" data-link="/chemverse/chemverse.html">
-  <div class="icon-bg"><i class="fas fa-globe"></i></div>
-  <h3>ChemVerse - Vũ trụ hóa học</h3>
-</section>
-
+      <section class="card" data-link="/chemverse/chemverse.html">
+        <div class="icon-bg"><i class="fas fa-globe"></i></div>
+        <h3>ChemVerse - Vũ trụ hóa học</h3>
+      </section>
     </main>
 
     <footer>
@@ -142,7 +223,7 @@
     </footer>
 
     <script>
-      // Bắt sự kiện click card 
+      // Bắt sự kiện click card
       document.querySelectorAll("[data-link]").forEach((el) => {
         el.addEventListener("click", () => {
           window.location.href = el.getAttribute("data-link");
@@ -155,7 +236,6 @@
       });
     </script>
 
-    <script src="menu.js"></script>
     <script src="welcome.js"></script>
   </body>
 </html>

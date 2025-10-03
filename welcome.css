@@ -3,10 +3,7 @@
 ======================== */
 .welcome-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: linear-gradient(135deg, #e3f2fd, #bbdefb);
   display: flex;
   align-items: center;
@@ -17,8 +14,6 @@
   padding: 20px;
   animation: fadeIn 0.8s ease forwards;
 }
-
-/* Fade-in overlay */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -27,12 +22,9 @@
     opacity: 1;
   }
 }
-
-/* Fade-out overlay */
 .fade-out {
   animation: fadeOut 0.8s ease forwards;
 }
-
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -43,83 +35,250 @@
   }
 }
 
-/* ========================
-   Hộp nội dung chào
-======================== */
 .welcome-box {
   background: white;
   border-radius: 15px;
   padding: 30px;
   max-width: 600px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
   transform: translateY(40px);
   animation: slideUp 1s ease forwards;
 }
-
 @keyframes slideUp {
   to {
     transform: translateY(0);
   }
 }
 
+.welcome-box h2,
+.welcome-box p {
+  opacity: 0;
+  animation: fadeText 1s ease forwards;
+}
 .welcome-box h2 {
-  margin-bottom: 15px;
   font-size: 28px;
   color: #1565c0;
-  opacity: 0;
-  animation: fadeText 1s ease forwards 0.5s;
+  margin-bottom: 15px;
+  animation-delay: 0.5s;
 }
-
 .welcome-box p {
-  margin-bottom: 20px;
   font-size: 16px;
-  line-height: 1.6;
   color: #333;
-  opacity: 0;
-  animation: fadeText 1s ease forwards 1s;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  animation-delay: 1s;
 }
-
 @keyframes fadeText {
   to {
     opacity: 1;
   }
 }
 
-/* ========================
-   Nút Bắt đầu học
-======================== */
 .welcome-box button {
-  background: #1565c0;
+  background: linear-gradient(135deg, #1565c0, #1e88e5);
   color: white;
   border: none;
   padding: 12px 25px;
   border-radius: 8px;
-  cursor: pointer;
   font-size: 16px;
-  animation: pulse 1.5s infinite;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  animation: pulse 1.6s infinite;
+  box-shadow: 0 4px 12px rgba(21, 101, 192, 0.4);
 }
-
-/* Hover sáng + phóng to */
 .welcome-box button:hover {
-  background: #0d47a1;
-  box-shadow: 0 0 15px rgba(21, 101, 192, 0.6);
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(21, 101, 192, 0.7);
 }
-
-/* Khi click thì nhấn xuống + glow */
 .welcome-box button:active {
   transform: scale(0.95);
-  box-shadow: 0 0 25px rgba(21, 101, 192, 0.9);
 }
-
-/* Hiệu ứng nhịp tim */
 @keyframes pulse {
   0%,
   100% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.08);
+    transform: scale(1.07);
   }
+}
+
+/* ======================== Body ======================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #cce0ff url("data:image/svg+xml,...") repeat;
+  background-size: 100px;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* ======================== Header ======================== */
+header {
+  text-align: center;
+  padding: 25px 20px;
+  color: #fff;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  background: linear-gradient(270deg, #0d47a1, #1565c0, #42a5f5, #7b1fa2);
+  background-size: 600% 600%;
+  animation: gradientMove 18s ease infinite, headerFloat 3s ease-in-out infinite;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+@keyframes gradientMove {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes headerFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+header h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #e0f7fa;
+  text-shadow: 0 0 10px #42a5f5, 0 0 20px #7b1fa2;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+header h1:hover {
+  transform: scale(1.08);
+  text-shadow: 0 0 15px #42a5f5, 0 0 30px #ffeb3b;
+}
+
+/* Nav menu */
+.nav-menu {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+.nav-menu button {
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  background: linear-gradient(270deg, #42a5f5, #1e88e5, #42a5f5);
+  background-size: 300% 300%;
+  animation: buttonGradient 6s ease infinite;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.nav-menu button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 12px #42a5f5, 0 0 18px #1e88e5;
+}
+@keyframes buttonGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ======================== Main Content ======================== */
+.main-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  justify-items: center;
+}
+.card {
+  width: 280px;
+  background: linear-gradient(135deg, #ffffff, #e3f2fd);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.3), 0 0 15px #42a5f5;
+}
+.card .icon-bg {
+  width: 90px;
+  height: 90px;
+  margin: 15px auto;
+  border-radius: 50%;
+  font-size: 2.5em;
+  color: #fff;
+  background: linear-gradient(135deg, #42a5f5, #7b1fa2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #42a5f5, 0 0 16px #7b1fa2;
+}
+.card:hover .icon-bg {
+  background: linear-gradient(135deg, #ffeb3b, #42a5f5);
+  box-shadow: 0 0 15px #ffeb3b, 0 0 25px #42a5f5;
+}
+.card h3 {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #0d47a1;
+  transition: all 0.3s ease;
+}
+.card:hover h3 {
+  color: #ffeb3b;
+  text-shadow: 0 0 6px #42a5f5;
+  transform: scale(1.08);
+}
+
+/* ======================== Footer ======================== */
+footer {
+  text-align: center;
+  background: linear-gradient(135deg, #0d47a1, #1565c0, #42a5f5);
+  color: #fff;
+  padding: 20px 0;
+  font-size: 0.95em;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.25);
+}
+footer p {
+  color: #90caf9;
+  text-shadow: 0 0 5px #42a5f5;
+  transition: all 0.3s ease;
+}
+footer p:hover {
+  color: #ffeb3b;
+  text-shadow: 0 0 10px #ffeb3b, 0 0 18px #42a5f5;
+}
+.social-links {
+  margin-top: 10px;
+}
+.social-links a {
+  margin: 0 12px;
+  font-size: 1.2em;
+  color: #90caf9;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.social-links a:hover {
+  color: #ffeb3b;
+  transform: scale(1.15);
+  text-shadow: 0 0 10px #ffeb3b;
 }
